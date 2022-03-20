@@ -1,0 +1,220 @@
+Number of args: 2
+-----------------
+Instruction Cache
+-----------------
+1000: ORI R1, R0, 24
+1004: ORI R2, R0, 124
+1008: L.D F2, 200(R0)
+1012:  L.D F0, 0(R1)
+1016: MUL.D F0, F0, F2
+1020: L.D F4, 0(R2)
+1024: ADD.D F0, F0, F4
+1028: S.D F0, 0(R2)
+1032: DADDI R1, R1, -8
+1036: DADDI R2, R2, -8
+1040: BNEZ R1, LOOP
+----------
+Data Cache
+----------
+Mem(200) = 2.0
+Mem(24) = 100.0
+Mem(16) = 200.0
+Mem(8) = 300.0
+Mem(124) = 300.0
+Mem(116) = 200.0
+Mem(108) = 100.0
+-----------
+Code Lables
+-----------
+LOOP: 1012
+
+Cycle 1
+Fetched 1000:ORI R1, R0, 24
+Decoded 1000:ORI R1, R0, 24 -> ORI, rd=1, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=24, target=0
+
+Cycle 2
+Fetched 1004:ORI R2, R0, 124
+Decoded 1004:ORI R2, R0, 124 -> ORI, rd=2, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=124, target=0
+
+Cycle 3
+Fetched 1008:L.D F2, 200(R0)
+Decoded 1008:L.D F2, 200(R0) -> L_D, rd=-1, rs=0, rt=-1, fd=-1, fs=-1, ft=2, immediate=200, target=0
+
+Cycle 4
+Fetched 1012: L.D F0, 0(R1)
+Decoded 1012: L.D F0, 0(R1) -> L_D, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 5
+Fetched 1016:MUL.D F0, F0, F2
+Decoded 1016:MUL.D F0, F0, F2 -> MUL_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+
+Cycle 6
+Fetched 1020:L.D F4, 0(R2)
+Decoded 1020:L.D F4, 0(R2) -> L_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+
+Cycle 7
+Fetched 1024:ADD.D F0, F0, F4
+Decoded 1024:ADD.D F0, F0, F4 -> ADD_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+
+Cycle 8
+Fetched 1028:S.D F0, 0(R2)
+Decoded 1028:S.D F0, 0(R2) -> S_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 9
+Fetched 1032:DADDI R1, R1, -8
+Decoded 1032:DADDI R1, R1, -8 -> DADDI, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 10
+Fetched 1036:DADDI R2, R2, -8
+Decoded 1036:DADDI R2, R2, -8 -> DADDI, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 11
+Fetched 1040:BNEZ R1, LOOP
+Decoded 1040:BNEZ R1, LOOP -> BNEZ, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+
+Cycle 12
+Fetched 1012: L.D F0, 0(R1)
+Decoded 1012: L.D F0, 0(R1) -> L_D, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 13
+Fetched 1016:MUL.D F0, F0, F2
+Decoded 1016:MUL.D F0, F0, F2 -> MUL_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+
+Cycle 14
+Fetched 1020:L.D F4, 0(R2)
+Decoded 1020:L.D F4, 0(R2) -> L_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+
+Cycle 15
+Fetched 1024:ADD.D F0, F0, F4
+Decoded 1024:ADD.D F0, F0, F4 -> ADD_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+
+Cycle 16
+Fetched 1028:S.D F0, 0(R2)
+Decoded 1028:S.D F0, 0(R2) -> S_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 17
+Fetched 1032:DADDI R1, R1, -8
+Decoded 1032:DADDI R1, R1, -8 -> DADDI, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 18
+Fetched 1036:DADDI R2, R2, -8
+Decoded 1036:DADDI R2, R2, -8 -> DADDI, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 19
+Fetched 1040:BNEZ R1, LOOP
+Decoded 1040:BNEZ R1, LOOP -> BNEZ, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+
+Cycle 20
+Fetched 1012: L.D F0, 0(R1)
+Decoded 1012: L.D F0, 0(R1) -> L_D, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 21
+Fetched 1016:MUL.D F0, F0, F2
+Decoded 1016:MUL.D F0, F0, F2 -> MUL_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+
+Cycle 22
+Fetched 1020:L.D F4, 0(R2)
+Decoded 1020:L.D F4, 0(R2) -> L_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+
+Cycle 23
+Fetched 1024:ADD.D F0, F0, F4
+Decoded 1024:ADD.D F0, F0, F4 -> ADD_D, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+
+Cycle 24
+Fetched 1028:S.D F0, 0(R2)
+Decoded 1028:S.D F0, 0(R2) -> S_D, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+
+Cycle 25
+Fetched 1032:DADDI R1, R1, -8
+Decoded 1032:DADDI R1, R1, -8 -> DADDI, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 26
+Fetched 1036:DADDI R2, R2, -8
+Decoded 1036:DADDI R2, R2, -8 -> DADDI, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+
+Cycle 27
+Fetched 1040:BNEZ R1, LOOP
+Decoded 1040:BNEZ R1, LOOP -> BNEZ, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+
+Cycle 28
+All instructions finished...
+----------
+Data Cache
+----------
+Mem(200) = 2.0
+Mem(24) = 100.0
+Mem(16) = 200.0
+Mem(8) = 300.0
+Mem(124) = 500.0
+Mem(116) = 600.0
+Mem(108) = 700.0
+-----------------
+Integer Registers
+-----------------
+Int_Reg[0]=0
+Int_Reg[1]=0
+Int_Reg[2]=100
+Int_Reg[3]=0
+Int_Reg[4]=0
+Int_Reg[5]=0
+Int_Reg[6]=0
+Int_Reg[7]=0
+Int_Reg[8]=0
+Int_Reg[9]=0
+Int_Reg[10]=0
+Int_Reg[11]=0
+Int_Reg[12]=0
+Int_Reg[13]=0
+Int_Reg[14]=0
+Int_Reg[15]=0
+Int_Reg[16]=0
+Int_Reg[17]=0
+Int_Reg[18]=0
+Int_Reg[19]=0
+Int_Reg[20]=0
+Int_Reg[21]=0
+Int_Reg[22]=0
+Int_Reg[23]=0
+Int_Reg[24]=0
+Int_Reg[25]=0
+Int_Reg[26]=0
+Int_Reg[27]=0
+Int_Reg[28]=0
+Int_Reg[29]=0
+Int_Reg[30]=0
+Int_Reg[31]=0
+------------------------
+Floating Point Registers
+------------------------
+FP_Reg[0]=700.0
+FP_Reg[1]=0.0
+FP_Reg[2]=2.0
+FP_Reg[3]=0.0
+FP_Reg[4]=100.0
+FP_Reg[5]=0.0
+FP_Reg[6]=0.0
+FP_Reg[7]=0.0
+FP_Reg[8]=0.0
+FP_Reg[9]=0.0
+FP_Reg[10]=0.0
+FP_Reg[11]=0.0
+FP_Reg[12]=0.0
+FP_Reg[13]=0.0
+FP_Reg[14]=0.0
+FP_Reg[15]=0.0
+FP_Reg[16]=0.0
+FP_Reg[17]=0.0
+FP_Reg[18]=0.0
+FP_Reg[19]=0.0
+FP_Reg[20]=0.0
+FP_Reg[21]=0.0
+FP_Reg[22]=0.0
+FP_Reg[23]=0.0
+FP_Reg[24]=0.0
+FP_Reg[25]=0.0
+FP_Reg[26]=0.0
+FP_Reg[27]=0.0
+FP_Reg[28]=0.0
+FP_Reg[29]=0.0
+FP_Reg[30]=0.0
+FP_Reg[31]=0.0

@@ -1,0 +1,3807 @@
+Simulator.
+-----------------
+Instruction Cache
+-----------------
+1000: addi R1, R0, 24
+1004: addi R2, R0, 124
+1008: fld F2, 200(R0)
+1012:  fld F0, 0(R1)
+1016: fmul F0, F0, F2
+1020: fld F4, 0(R2)
+1024: fadd F0, F0, F4
+1028: fsd F0, 0(R2)
+1032: addi R1, R1, -8
+1036: addi R2, R2, -8
+1040: bne R1, $0, loop
+----------
+Data Cache
+----------
+Mem(0) = 16.0
+Mem(8) = 14.0
+Mem(16) = 5.0
+Mem(24) = 10.0
+Mem(100) = 2.0
+Mem(108) = 27.0
+Mem(116) = 3.0
+Mem(124) = 8.0
+Mem(200) = 12.0
+-----------
+Code Lables
+-----------
+loop: 1012
+
+Cycle 1
+Fetched 1000:addi R1, R0, 24
+Fetched 1004:addi R2, R0, 124
+Fetched 1008:fld F2, 200(R0)
+Fetched 1012: fld F0, 0(R1)
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 0 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+-----------------
+Integer Registers Status
+-----------------
+-----------------
+Floating Point Registers Status
+-----------------
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Cycle 2
+Fetched 1016:fmul F0, F0, F2
+Fetched 1020:fld F4, 0(R2)
+Fetched 1024:fadd F0, F0, F4
+Fetched 1028:fsd F0, 0(R2)
+Finished fetching.
+Decoded 3e8:addi R1, R0, 24 -> addi, rd=1, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=24, target=0
+Decoded 3ec:addi R2, R0, 124 -> addi, rd=2, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=124, target=0
+Decoded 3f0:fld F2, 200(R0) -> fld, rd=-1, rs=0, rt=-1, fd=-1, fs=-1, ft=2, immediate=200, target=0
+Decoded 3f4: fld F0, 0(R1) -> fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 0 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1000: addi
+Instruction 1004: addi
+Instruction 1008: fld
+Instruction 1012: fld
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+-----------------
+Integer Registers Status
+-----------------
+-----------------
+Floating Point Registers Status
+-----------------
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Cycle 3
+Fetched 1032:addi R1, R1, -8
+Fetched 1036:addi R2, R2, -8
+Fetched 1040:bne R1, $0, loop
+All instructions are fetched...
+Finished fetching.
+Decoded 3f8:fmul F0, F0, F2 -> fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+Decoded 3fc:fld F4, 0(R2) -> fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+Decoded 400:fadd F0, F0, F4 -> fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+Decoded 404:fsd F0, 0(R2) -> fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Finished decoding.
+Issued instruction 3e8: addi
+Issued instruction 3ec: addi
+Issued instruction 3f0: fld
+Issued instruction 3f4: fld
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 4 fetch end - 1 FBcount - 3
+-----------------
+Instruction Queue
+-----------------
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1000			addi		0		0		-1		-1			0			1		0
+1004			addi		0		0		-1		-1			1			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1008			fld		0		0		0.0		-1		0			2			1		0
+1012			fld		0		0		0.0		0		0			3			0		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 0
+Renaming register number 1: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 2: value 0.000000
+Renaming register number 3: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 3
+FP_Reg[2] is busy with reorder buffer number 2
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+0		1000	I	1		0	0	1		0		0	0		1
+1		1004	I	2		0	0	1		0		0	0		1
+2		1008	I	2		0	0	0		0		0	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+
+Cycle 4
+All instructions are fetched...
+Finished fetching.
+Decoded 408:addi R1, R1, -8 -> addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 40c:addi R2, R2, -8 -> addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 410:bne R1, $0, loop -> bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+Finished decoding.
+Issued instruction 3f8: fmul
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3e8 and ROB 0
+Instruction addi at address 3e8 entered INT unit.
+instruction exceuting has address 3f0 and ROB 2
+Instruction fld at address 3f0 entered Load/Store unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 5 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1000			addi		0		0		-1		-1			0			1		1
+1004			addi		0		0		-1		-1			1			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		0.0		3		2			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1008			fld		0		0		0.0		-1		0			2			1		1
+1012			fld		0		0		0.0		0		0			3			0		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 0
+Renaming register number 1: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 2: value 0.000000
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 4
+FP_Reg[2] is busy with reorder buffer number 2
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+0		1000	I	1		0	0	1		0		0	0		1
+1		1004	I	2		0	0	1		0		0	0		1
+2		1008	I	2		0	0	0		0		0	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+
+Cycle 5
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3ec and ROB 1
+Instruction addi at address 3ec entered INT unit.
+instruction exceuting has address 3f0 and ROB 2
+Instruction fld at address 3f0 entered MEM unit.
+INT unit output PC 3e8: addi, rd=1, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=24, target=0 with ROB number 0
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3e8 to WriteBack Buffer with ROB no - 0  Output - 24
+commit count - 0, wb count - 1
+instruction 3e8  with ROB_number - 0 updated in reorder buffer 
+Updating reservation stations with ROB - 0
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 5 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1004			addi		0		0		-1		-1			1			1		1
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		0.0		3		2			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1008			fld		0		0		0.0		-1		0			2			1		2
+1012			fld		24		0		0.0		-1		0			3			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 1: value 0
+Renaming register number 0: value 24
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 2: value 0.000000
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 4
+FP_Reg[2] is busy with reorder buffer number 2
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+0		1000	W	1		0	1	1		0		0	0		1
+1		1004	I	2		0	0	1		0		0	0		1
+2		1008	I	2		0	0	0		0		0	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+
+Cycle 6
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 3
+Instruction fld at address 3f4 entered Load/Store unit.
+INT unit output PC 3ec: addi, rd=2, rs=0, rt=-1, fd=-1, fs=-1, ft=-1, immediate=124, target=0 with ROB number 1
+execute---unitoutputs of LSLoad/Store unit output PC 3f0: fld, rd=-1, rs=0, rt=-1, fd=-1, fs=-1, ft=2, immediate=200, target=0 with ROB number 2
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3ec to WriteBack Buffer with ROB no - 1  Output - 124
+Added instruction 3f0 to WriteBack Buffer with ROB no - 2  Outputt - 12.000000
+commit count - 1, wb count - 2
+reg status rob muber - 0	 Commit instruction ROB number - 0
+Committed instruction 1000 in integer register number 1 with value 24 
+instruction 3ec  with ROB_number - 1 updated in reorder buffer 
+Updating reservation stations with ROB - 1
+instruction 3f0  with ROB_number - 2 updated in reorder buffer 
+Updating reservation stations with ROB - 2
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 4 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		12.0		3		-1			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		24		0		0.0		-1		0			3			1		1
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 1: value 124
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 2: value 12.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 4
+FP_Reg[2] is busy with reorder buffer number 2
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+1		1004	W	2		0	1	1		0		0	0		1
+2		1008	W	2		0	1	0		0		0	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+
+Cycle 7
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Issued instruction 3fc: fld
+Issued instruction 400: fadd
+Begin issuing store.
+Issued instruction 404: fsd
+Issued instruction 408: addi
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 3
+Instruction fld at address 3f4 entered MEM unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 2, wb count - 0
+reg status rob muber - 1	 Commit instruction ROB number - 1
+Committed instruction 1004 in integer register number 2 with value 124 
+reg status rob muber - 2	 Commit instruction ROB number - 2
+Committed instruction 1008 in floating point register number 2 with value 12.000000
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -2 robcount - 6 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		24		0		-1		-1			8			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		12.0		3		-1			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		24		0		0.0		-1		0			3			1		2
+1020			fld		124		0		0.0		-1		0			5			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	I	1		0	0	1		0		0	0		1
+
+Cycle 8
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Issued instruction 40c: addi
+Begin issuing BU .
+Issued instruction 410: bne
+Finished issue.
+Execution -----------
+instruction exceuting has address 408 and ROB 8
+Instruction addi at address 408 entered INT unit.
+instruction exceuting has address 3fc and ROB 5
+Instruction fld at address 3fc entered Load/Store unit.
+execute---unitoutputs of LSLoad/Store unit output PC 3f4: fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 3
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3f4 to WriteBack Buffer with ROB no - 3  Outputt - 10.000000
+commit count - 0, wb count - 1
+instruction 3f4  with ROB_number - 3 updated in reorder buffer 
+Updating reservation stations with ROB - 3
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 8 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		24		0		-1		-1			8			1		1
+1036			addi		124		0		-1		-1			9			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		10.0		12.0		-1		-1			4			1		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		8		-1			10			0		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1020			fld		124		0		0.0		-1		0			5			1		1
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+Renaming register number 9: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 4: value 0.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 10.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	I	1		0	0	1		0		0	0		1
+9		1036	I	2		0	0	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 9
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+instruction exceuting has address 40c and ROB 9
+Instruction addi at address 40c entered INT unit.
+instruction exceuting has address 3fc and ROB 5
+Instruction fld at address 3fc entered MEM unit.
+instruction exceuting has address 3f8 and ROB 4
+Instruction fmul at address 3f8 entered FPmult unit.
+INT unit output PC 408: addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 8
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 408 to WriteBack Buffer with ROB no - 8  Output - 16
+commit count - 1, wb count - 1
+reg status rob muber - 6	 Commit instruction ROB number - 3
+Committed instruction 1012 in floating point register number 0 with value 10.000000
+instruction 408  with ROB_number - 8 updated in reorder buffer 
+Updating reservation stations with ROB - 8
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1036			addi		124		0		-1		-1			9			1		1
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		10.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		16		0		-1		-1			10			1		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1020			fld		124		0		0.0		-1		0			5			1		2
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 9: value 0
+Renaming register number 8: value 16
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 4: value 0.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	I	2		0	0	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 10
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3fc and ROB 5
+instruction exceuting has address 410 and ROB 10
+Instruction bne at address 410 entered BU unit.
+INT unit output PC 40c: addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 9
+execute---unitoutputs of LSLoad/Store unit output PC 3fc: fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0 with ROB number 5
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 40c to WriteBack Buffer with ROB no - 9  Output - 116
+Added instruction 3fc to WriteBack Buffer with ROB no - 5  Outputt - 8.000000
+commit count - 0, wb count - 2
+instruction 40c  with ROB_number - 9 updated in reorder buffer 
+Updating reservation stations with ROB - 9
+instruction 3fc  with ROB_number - 5 updated in reorder buffer 
+Updating reservation stations with ROB - 5
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		8.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		10.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		16		0		-1		-1			10			1		1
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 5: value 8.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 11
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Branch taken but predicted as not taken
+BU unit output PC 410: bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012 with ROB number 10
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 410 to WriteBack Buffer with ROB no - 10  Output - 0
+commit count - 0, wb count - 1
+instruction 410  with ROB_number - 10 updated in reorder buffer 
+Updating reservation stations with ROB - 10
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 0 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		8.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		10.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 5: value 8.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+
+Cycle 12
+Fetched 1012: fld F0, 0(R1)
+Fetched 1016:fmul F0, F0, F2
+Fetched 1020:fld F4, 0(R2)
+Fetched 1024:fadd F0, F0, F4
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		8.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		10.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 5: value 8.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+
+Cycle 13
+Fetched 1028:fsd F0, 0(R2)
+Fetched 1032:addi R1, R1, -8
+Fetched 1036:addi R2, R2, -8
+Fetched 1040:bne R1, $0, loop
+Instruction 1040 is a branch in the BranchTargetBuffer with target address 3f4.
+Finished fetching.
+Decoded 3f4: fld F0, 0(R1) -> fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 3f8:fmul F0, F0, F2 -> fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+Decoded 3fc:fld F4, 0(R2) -> fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+Decoded 400:fadd F0, F0, F4 -> fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+Finished decoding.
+Finished issue.
+Execution -----------
+FPmult unit output PC 3f8: fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0 with ROB number 4
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3f8 to WriteBack Buffer with ROB no - 4  Output - 120.000000
+commit count - 0, wb count - 1
+instruction 3f8  with ROB_number - 4 updated in reorder buffer 
+Updating reservation stations with ROB - 4
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 7 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		120.0		8.0		-1		-1			6			1		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 5: value 8.000000
+Renaming register number 4: value 120.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+4		1016	W	0		0	1	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+
+Cycle 14
+Fetched 1012: fld F0, 0(R1)
+Fetched 1016:fmul F0, F0, F2
+Fetched 1020:fld F4, 0(R2)
+Fetched 1024:fadd F0, F0, F4
+Finished fetching.
+Decoded 404:fsd F0, 0(R2) -> fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 408:addi R1, R1, -8 -> addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 40c:addi R2, R2, -8 -> addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 410:bne R1, $0, loop -> bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+Finished decoding.
+Issued instruction 3f4: fld
+Issued instruction 3f8: fmul
+Issued instruction 3fc: fld
+Issued instruction 400: fadd
+Finished issue.
+Execution -----------
+instruction exceuting has address 400 and ROB 6
+Instruction fadd at address 400 entered FPadd unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 2, wb count - 0
+reg status rob muber - 14	 Commit instruction ROB number - 4
+Committed instruction 1016 in floating point register number 0 with value 120.000000
+reg status rob muber - 13	 Commit instruction ROB number - 5
+Committed instruction 1020 in floating point register number 4 with value 8.000000
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 9 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		120.0		8.0		-1		-1			6			1		1
+1024			fadd		0.0		0.0		12		13			14			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		12.0		11		-1			12			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		16		0		0.0		-1		0			11			1		0
+1020			fld		116		0		0.0		-1		0			13			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 11: value 0.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+Renaming register number 14: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 14
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	I	0		0	0	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+
+Cycle 15
+Fetched 1028:fsd F0, 0(R2)
+Fetched 1032:addi R1, R1, -8
+Fetched 1036:addi R2, R2, -8
+Fetched 1040:bne R1, $0, loop
+Instruction 1040 is a branch in the BranchTargetBuffer with target address 3f4.
+Finished fetching.
+Decoded 3f4: fld F0, 0(R1) -> fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 3f8:fmul F0, F0, F2 -> fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+Decoded 3fc:fld F4, 0(R2) -> fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+Decoded 400:fadd F0, F0, F4 -> fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+Finished decoding.
+Begin issuing store.
+Issued instruction 404: fsd
+Issued instruction 408: addi
+Issued instruction 40c: addi
+Begin issuing BU .
+Issued instruction 410: bne
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 11
+Instruction fld at address 3f4 entered Load/Store unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 13 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		16		0		-1		-1			0			1		0
+1036			addi		116		0		-1		-1			1			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		120.0		8.0		-1		-1			6			1		1
+1024			fadd		0.0		0.0		12		13			14			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		12.0		11		-1			12			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		0		-1			2			0		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		16		0		0.0		-1		0			11			1		1
+1020			fld		116		0		0.0		-1		0			13			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+Renaming register number 0: value 0
+Renaming register number 1: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 11: value 0.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+Renaming register number 14: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 14
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	I	0		0	0	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	I	1		0	0	1		0		0	0		1
+1		1036	I	2		0	0	1		0		0	0		1
+2		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 16
+Fetched 1012: fld F0, 0(R1)
+Fetched 1016:fmul F0, F0, F2
+Fetched 1020:fld F4, 0(R2)
+Fetched 1024:fadd F0, F0, F4
+Finished fetching.
+Decoded 404:fsd F0, 0(R2) -> fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 408:addi R1, R1, -8 -> addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 40c:addi R2, R2, -8 -> addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 410:bne R1, $0, loop -> bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+Finished decoding.
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 408 and ROB 0
+Instruction addi at address 408 entered INT unit.
+instruction exceuting has address 3fc and ROB 13
+Instruction fld at address 3fc entered Load/Store unit.
+Instruction fld at address 3f4 entered MEM unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 0, wb count - 0
+No instruction in Writeback and in ROB for Commit(Program 1).
+Count on CDB for program 1 is 0
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -8 robcount - 13 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		16		0		-1		-1			0			1		1
+1036			addi		116		0		-1		-1			1			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		120.0		8.0		-1		-1			6			1		1
+1024			fadd		0.0		0.0		12		13			14			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		0.0		12.0		11		-1			12			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		0		-1			2			0		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		16		0		0.0		-1		0			11			1		2
+1020			fld		116		0		0.0		-1		0			13			1		1
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		0.0		-1		6			7			0		0
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+Renaming register number 0: value 0
+Renaming register number 1: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 11: value 0.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+Renaming register number 14: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 14
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	I	0		0	0	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	I	1		0	0	1		0		0	0		1
+1		1036	I	2		0	0	1		0		0	0		1
+2		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 17
+Fetched 1028:fsd F0, 0(R2)
+Fetched 1032:addi R1, R1, -8
+Fetched 1036:addi R2, R2, -8
+Fetched 1040:bne R1, $0, loop
+Instruction 1040 is a branch in the BranchTargetBuffer with target address 3f4.
+Finished fetching.
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 40c and ROB 1
+Instruction addi at address 40c entered INT unit.
+instruction exceuting has address 3f4 and ROB 11
+Instruction fld at address 3fc entered MEM unit.
+INT unit output PC 408: addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 0
+execute---unitoutputs of LSLoad/Store unit output PC 3f4: fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 11
+FPadd unit output PC 400: fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0 with ROB number 6
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 408 to WriteBack Buffer with ROB no - 0  Output - 8
+Added instruction 400 to WriteBack Buffer with ROB no - 6  Output - 128.000000
+Added instruction 3f4 to WriteBack Buffer with ROB no - 11  Outputt - 5.000000
+commit count - 0, wb count - 3
+instruction 408  with ROB_number - 0 updated in reorder buffer 
+Updating reservation stations with ROB - 0
+instruction 400  with ROB_number - 6 updated in reorder buffer 
+Updating reservation stations with ROB - 6
+instruction 3f4  with ROB_number - 11 updated in reorder buffer 
+Updating reservation stations with ROB - 11
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -8 robcount - 13 fetch end - 0 FBcount - 8
+-----------------
+Instruction Queue
+-----------------
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1036			addi		116		0		-1		-1			1			1		1
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		0.0		12		13			14			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		5.0		12.0		-1		-1			12			1		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		8		0		-1		-1			2			1		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1020			fld		116		0		0.0		-1		0			13			1		2
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		128.0		-1		-1			7			1		0
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+Renaming register number 1: value 0
+Renaming register number 0: value 8
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+Renaming register number 14: value 0.000000
+Renaming register number 11: value 5.000000
+Renaming register number 6: value 128.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 14
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+6		1024	W	0		0	1	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	I	2		0	0	1		0		0	0		1
+2		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 18
+Fetching stall in this cycle...
+Finished fetching.
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Issued instruction 3f4: fld
+Issued instruction 3f8: fmul
+Stall during IssueUnit because Load buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3fc and ROB 13
+instruction exceuting has address 404 and ROB 7
+Instruction fsd at address 404 entered Load/Store unit.
+instruction exceuting has address 3f8 and ROB 12
+Instruction fmul at address 3f8 entered FPmult unit.
+instruction exceuting has address 410 and ROB 2
+Instruction bne at address 410 entered BU unit.
+INT unit output PC 40c: addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 1
+execute---unitoutputs of LSLoad/Store unit output PC 3fc: fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0 with ROB number 13
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 40c to WriteBack Buffer with ROB no - 1  Output - 108
+Added instruction 3fc to WriteBack Buffer with ROB no - 13  Outputt - 3.000000
+commit count - 1, wb count - 2
+reg status rob muber - 4	 Commit instruction ROB number - 6
+Committed instruction 1024 in floating point register number 0 with value 128.000000
+instruction 40c  with ROB_number - 1 updated in reorder buffer 
+Updating reservation stations with ROB - 1
+instruction 3fc  with ROB_number - 13 updated in reorder buffer 
+Updating reservation stations with ROB - 13
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 14 fetch end - 0 FBcount - 8
+-----------------
+Instruction Queue
+-----------------
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		3.0		12		-1			14			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		5.0		12.0		-1		-1			12			1		1
+1016			fmul		0.0		12.0		3		-1			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		8		0		-1		-1			2			1		1
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		8		0		0.0		-1		0			3			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		124		0		128.0		-1		-1			7			1		1
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 14: value 0.000000
+Renaming register number 11: value 5.000000
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 13: value 3.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 4
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	I	-1		0	0	0		0		1	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+
+Cycle 19
+Fetching stall in this cycle...
+Finished fetching.
+Decoded 3f4: fld F0, 0(R1) -> fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 3f8:fmul F0, F0, F2 -> fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Issued instruction 3fc: fld
+Issued instruction 400: fadd
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 3
+Instruction fld at address 3f4 entered Load/Store unit.
+execute---unitoutputs of LSLoad/Store unit output PC 404: fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 7
+Branch taken and predicted as taken
+BU unit output PC 410: bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012 with ROB number 2
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 410 to WriteBack Buffer with ROB no - 2  Output - 0
+Added instruction 404 to WriteBack Buffer with ROB no - 7  Output - 128.000000
+commit count - 0, wb count - 2
+instruction 410  with ROB_number - 2 updated in reorder buffer 
+Updating reservation stations with ROB - 2
+instruction 404  with ROB_number - 7 updated in reorder buffer 
+Updating reservation stations with ROB - 7
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 16 fetch end - 0 FBcount - 6
+-----------------
+Instruction Queue
+-----------------
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+Instruction 1012: fld
+Instruction 1016: fmul
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		3.0		12		-1			14			0		0
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		5.0		12.0		-1		-1			12			1		1
+1016			fmul		0.0		12.0		3		-1			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		8		0		0.0		-1		0			3			1		1
+1020			fld		108		0		0.0		-1		0			5			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 16
+Renaming register number 9: value 116
+Renaming register number 10: value 0
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 14: value 0.000000
+Renaming register number 11: value 5.000000
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 13: value 3.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 7: value 128.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+7		1028	W	-1		124	1	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+
+Cycle 20
+Fetching stall in this cycle...
+Finished fetching.
+Decoded 3fc:fld F4, 0(R2) -> fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+Decoded 400:fadd F0, F0, F4 -> fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3fc and ROB 5
+Instruction fld at address 3fc entered Load/Store unit.
+Instruction fld at address 3f4 entered MEM unit.
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 5, wb count - 0
+Committed instruction FSD 404 in memory address 7c 
+reg status rob muber - 0	 Commit instruction ROB number - 8
+Committed instruction 1032 in integer register number 1 with value 16 
+reg status rob muber - 1	 Commit instruction ROB number - 9
+Committed instruction 1036 in integer register number 2 with value 116 
+instruction being flushed has rob num 11
+Branch mispredicted so flushed ROB.
+Committed branch instruction 410
+Count on CDB for program 1 is 4
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -8 robcount - 12 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		3.0		12		-1			14			0		0
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		5.0		12.0		-1		-1			12			1		1
+1016			fmul		0.0		12.0		3		-1			4			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		8		0		0.0		-1		0			3			1		2
+1020			fld		108		0		0.0		-1		0			5			1		1
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 14: value 0.000000
+Renaming register number 11: value 5.000000
+Renaming register number 3: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 13: value 3.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 0
+Int_Reg[2] is busy with reorder buffer number 1
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	I	0		0	0	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+
+Cycle 21
+Fetching stall in this cycle...
+Finished fetching.
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Begin issuing store.
+Issued instruction 404: fsd
+Issued instruction 408: addi
+Issued instruction 40c: addi
+Begin issuing BU .
+Issued instruction 410: bne
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 3
+Instruction fld at address 3fc entered MEM unit.
+execute---unitoutputs of LSLoad/Store unit output PC 3f4: fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 3
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3f4 to WriteBack Buffer with ROB no - 3  Outputt - 14.000000
+commit count - 1, wb count - 1
+reg status rob muber - 6	 Commit instruction ROB number - 11
+Committed instruction 1012 in floating point register number 0 with value 5.000000
+instruction 3f4  with ROB_number - 3 updated in reorder buffer 
+Updating reservation stations with ROB - 3
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -4 robcount - 15 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1012: fld
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		8		0		-1		-1			8			1		0
+1036			addi		108		0		-1		-1			9			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		0.0		3.0		12		-1			14			0		0
+1024			fadd		0.0		0.0		4		5			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		5.0		12.0		-1		-1			12			1		1
+1016			fmul		14.0		12.0		-1		-1			4			1		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		8		-1			10			0		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1020			fld		108		0		0.0		-1		0			5			1		2
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 14: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 13: value 3.000000
+Renaming register number 5: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 6
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	I	4		0	0	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	I	1		0	0	1		0		0	0		1
+9		1036	I	2		0	0	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+
+Cycle 22
+Fetching stall in this cycle...
+Finished fetching.
+Decoded 404:fsd F0, 0(R2) -> fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Decoded 408:addi R1, R1, -8 -> addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 40c:addi R2, R2, -8 -> addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0
+Decoded 410:bne R1, $0, loop -> bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012
+Finished decoding.
+Issued instruction 3f4: fld
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 408 and ROB 8
+Instruction addi at address 408 entered INT unit.
+instruction exceuting has address 3fc and ROB 5
+instruction exceuting has address 3f8 and ROB 4
+Instruction fmul at address 3f8 entered FPmult unit.
+execute---unitoutputs of LSLoad/Store unit output PC 3fc: fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0 with ROB number 5
+FPmult unit output PC 3f8: fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0 with ROB number 12
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3f8 to WriteBack Buffer with ROB no - 12  Output - 60.000000
+Added instruction 3fc to WriteBack Buffer with ROB no - 5  Outputt - 27.000000
+commit count - 0, wb count - 2
+instruction 3f8  with ROB_number - 12 updated in reorder buffer 
+Updating reservation stations with ROB - 12
+instruction 3fc  with ROB_number - 5 updated in reorder buffer 
+Updating reservation stations with ROB - 5
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -7 robcount - 16 fetch end - 0 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1032			addi		8		0		-1		-1			8			1		1
+1036			addi		108		0		-1		-1			9			1		0
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		60.0		3.0		-1		-1			14			1		0
+1024			fadd		0.0		27.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		14.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		8		-1			10			0		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		0		0		0.0		8		0			11			0		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 14: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 13: value 3.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 11: value 0.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 60.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 11
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+12		1016	W	0		0	1	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	I	1		0	0	1		0		0	0		1
+9		1036	I	2		0	0	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+11		1012	I	0		0	0	0		0		0	0		1
+
+Cycle 23
+Fetched 1012: fld F0, 0(R1)
+Fetched 1016:fmul F0, F0, F2
+Fetched 1020:fld F4, 0(R2)
+Fetched 1024:fadd F0, F0, F4
+Finished fetching.
+Finished decoding.
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 40c and ROB 9
+Instruction addi at address 40c entered INT unit.
+instruction exceuting has address 400 and ROB 14
+Instruction fadd at address 400 entered FPadd unit.
+INT unit output PC 408: addi, rd=1, rs=1, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 8
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 408 to WriteBack Buffer with ROB no - 8  Output - 0
+commit count - 2, wb count - 1
+reg status rob muber - 11	 Commit instruction ROB number - 12
+Committed instruction 1016 in floating point register number 0 with value 60.000000
+reg status rob muber - 5	 Commit instruction ROB number - 13
+Committed instruction 1020 in floating point register number 4 with value 3.000000
+instruction 408  with ROB_number - 8 updated in reorder buffer 
+Updating reservation stations with ROB - 8
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -7 robcount - 14 fetch end - 0 FBcount - 4
+-----------------
+Instruction Queue
+-----------------
+Instruction 1016: fmul
+Instruction 1020: fld
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1036			addi		108		0		-1		-1			9			1		1
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		60.0		3.0		-1		-1			14			1		1
+1024			fadd		0.0		27.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		14.0		12.0		-1		-1			4			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		-1		-1			10			1		0
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		0		0		0.0		-1		0			11			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 9: value 0
+Renaming register number 8: value 0
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 14: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 11: value 0.000000
+Renaming register number 5: value 27.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 11
+FP_Reg[4] is busy with reorder buffer number 5
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	I	2		0	0	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+11		1012	I	0		0	0	0		0		0	0		1
+
+Cycle 24
+Fetched 1028:fsd F0, 0(R2)
+Fetched 1032:addi R1, R1, -8
+Fetched 1036:addi R2, R2, -8
+Fetched 1040:bne R1, $0, loop
+Instruction 1040 is a branch in the BranchTargetBuffer with target address 3f4.
+Finished fetching.
+Decoded 3f4: fld F0, 0(R1) -> fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Issued instruction 3f8: fmul
+Issued instruction 3fc: fld
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 11
+Instruction fld at address 3f4 entered Load/Store unit.
+instruction exceuting has address 410 and ROB 10
+Instruction bne at address 410 entered BU unit.
+INT unit output PC 40c: addi, rd=2, rs=2, rt=-1, fd=-1, fs=-1, ft=-1, immediate=-8, target=0 with ROB number 9
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 40c to WriteBack Buffer with ROB no - 9  Output - 100
+commit count - 0, wb count - 1
+instruction 40c  with ROB_number - 9 updated in reorder buffer 
+Updating reservation stations with ROB - 9
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -6 robcount - 16 fetch end - 0 FBcount - 7
+-----------------
+Instruction Queue
+-----------------
+Instruction 1024: fadd
+Instruction 1028: fsd
+Instruction 1032: addi
+Instruction 1036: addi
+Instruction 1040: bne
+Instruction 1012: fld
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		60.0		3.0		-1		-1			14			1		1
+1024			fadd		0.0		27.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		14.0		12.0		-1		-1			4			1		1
+1016			fmul		0.0		12.0		11		-1			12			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1040			bne		0		0		-1		-1			10			1		1
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		0		0		0.0		-1		0			11			1		1
+1020			fld		100		0		0.0		-1		0			13			1		0
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 14: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 11: value 0.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	I	-1		0	0	0		0		1	0		1
+11		1012	I	0		0	0	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+
+Cycle 25
+Fetching stall in this cycle...
+Finished fetching.
+Decoded 3f8:fmul F0, F0, F2 -> fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0
+Decoded 3fc:fld F4, 0(R2) -> fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0
+Cannot decode all fetched instructions because the instruction queue is full.
+Finished decoding.
+Stall during IssueUnit because reorder buffer is full.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3fc and ROB 13
+Instruction fld at address 3fc entered Load/Store unit.
+Instruction fld at address 3f4 entered MEM unit.
+Branch not taken but predicted as taken
+BU unit output PC 410: bne, rd=-1, rs=1, rt=0, fd=-1, fs=-1, ft=-1, immediate=0, target=1012 with ROB number 10
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 410 to WriteBack Buffer with ROB no - 10  Output - -1
+commit count - 0, wb count - 1
+instruction 410  with ROB_number - 10 updated in reorder buffer 
+Updating reservation stations with ROB - 10
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 16 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		60.0		3.0		-1		-1			14			1		1
+1024			fadd		0.0		27.0		4		-1			6			0		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		14.0		12.0		-1		-1			4			1		1
+1016			fmul		0.0		12.0		11		-1			12			0		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1012			fld		0		0		0.0		-1		0			11			1		2
+1020			fld		100		0		0.0		-1		0			13			1		1
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		0.0		-1		14			15			0		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 14: value 0.000000
+Renaming register number 4: value 0.000000
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 11: value 0.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+14		1024	I	0		0	0	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	I	0		0	0	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	I	0		0	0	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+
+Cycle 26
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3f4 and ROB 11
+Instruction fld at address 3fc entered MEM unit.
+execute---unitoutputs of LSLoad/Store unit output PC 3f4: fld, rd=-1, rs=1, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 11
+FPadd unit output PC 400: fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0 with ROB number 14
+FPmult unit output PC 3f8: fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0 with ROB number 4
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 400 to WriteBack Buffer with ROB no - 14  Output - 63.000000
+Added instruction 3f8 to WriteBack Buffer with ROB no - 4  Output - 168.000000
+Added instruction 3f4 to WriteBack Buffer with ROB no - 11  Outputt - 16.000000
+commit count - 0, wb count - 3
+instruction 400  with ROB_number - 14 updated in reorder buffer 
+Updating reservation stations with ROB - 14
+instruction 3f8  with ROB_number - 4 updated in reorder buffer 
+Updating reservation stations with ROB - 4
+instruction 3f4  with ROB_number - 11 updated in reorder buffer 
+Updating reservation stations with ROB - 11
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 16 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		168.0		27.0		-1		-1			6			1		0
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		16.0		12.0		-1		-1			12			1		0
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1020			fld		100		0		0.0		-1		0			13			1		2
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		63.0		-1		-1			15			1		0
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 13: value 0.000000
+Renaming register number 11: value 16.000000
+Renaming register number 14: value 63.000000
+Renaming register number 4: value 168.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+14		1024	W	0		0	1	0		0		0	0		1
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	W	0		0	1	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	I	4		0	0	0		0		0	0		1
+
+Cycle 27
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+instruction exceuting has address 3fc and ROB 13
+instruction exceuting has address 404 and ROB 15
+Instruction fsd at address 404 entered Load/Store unit.
+instruction exceuting has address 400 and ROB 6
+Instruction fadd at address 400 entered FPadd unit.
+instruction exceuting has address 3f8 and ROB 12
+Instruction fmul at address 3f8 entered FPmult unit.
+execute---unitoutputs of LSLoad/Store unit output PC 3fc: fld, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=4, immediate=0, target=0 with ROB number 13
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3fc to WriteBack Buffer with ROB no - 13  Outputt - 2.000000
+commit count - 1, wb count - 1
+reg status rob muber - 12	 Commit instruction ROB number - 14
+Committed instruction 1024 in floating point register number 0 with value 63.000000
+instruction 3fc  with ROB_number - 13 updated in reorder buffer 
+Updating reservation stations with ROB - 13
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 15 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		168.0		27.0		-1		-1			6			1		1
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		16.0		12.0		-1		-1			12			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		116		0		63.0		-1		-1			15			1		1
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 11: value 16.000000
+Renaming register number 4: value 168.000000
+Renaming register number 13: value 2.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+15		1028	I	-1		0	0	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	W	0		0	1	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 28
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+execute---unitoutputs of LSLoad/Store unit output PC 404: fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 15
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 404 to WriteBack Buffer with ROB no - 15  Output - 63.000000
+commit count - 0, wb count - 1
+instruction 404  with ROB_number - 15 updated in reorder buffer 
+Updating reservation stations with ROB - 15
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 15 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		168.0		27.0		-1		-1			6			1		1
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		16.0		12.0		-1		-1			12			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 0: value 8
+Renaming register number 1: value 108
+Renaming register number 2: value 0
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 11: value 16.000000
+Renaming register number 4: value 168.000000
+Renaming register number 13: value 2.000000
+Renaming register number 15: value 63.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+15		1028	W	-1		116	1	0		1		0	0		1
+0		1032	W	1		0	1	1		0		0	0		1
+1		1036	W	2		0	1	1		0		0	0		1
+2		1040	W	-1		0	1	0		0		1	0		1
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	W	0		0	1	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 29
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 7, wb count - 0
+Committed instruction FSD 404 in memory address 74 
+reg status rob muber - 8	 Commit instruction ROB number - 0
+Committed instruction 1032 in integer register number 1 with value 8 
+reg status rob muber - 9	 Commit instruction ROB number - 1
+Committed instruction 1036 in integer register number 2 with value 108 
+Committed branch instruction 410
+Count on CDB for program 1 is 4
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 11 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1024			fadd		168.0		27.0		-1		-1			6			1		1
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		16.0		12.0		-1		-1			12			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		108		0		0.0		-1		6			7			0		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 6: value 0.000000
+Renaming register number 3: value 14.000000
+Renaming register number 5: value 27.000000
+Renaming register number 12: value 0.000000
+Renaming register number 11: value 16.000000
+Renaming register number 4: value 168.000000
+Renaming register number 13: value 2.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+3		1012	W	0		0	1	0		0		0	0		1
+4		1016	W	0		0	1	0		0		0	0		1
+5		1020	W	4		0	1	0		0		0	0		1
+6		1024	I	0		0	0	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 30
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+FPadd unit output PC 400: fadd, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=4, immediate=0, target=0 with ROB number 6
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 400 to WriteBack Buffer with ROB no - 6  Output - 195.000000
+commit count - 3, wb count - 1
+reg status rob muber - 12	 Commit instruction ROB number - 3
+Committed instruction 1012 in floating point register number 0 with value 14.000000
+reg status rob muber - 12	 Commit instruction ROB number - 4
+Committed instruction 1016 in floating point register number 0 with value 168.000000
+reg status rob muber - 13	 Commit instruction ROB number - 5
+Committed instruction 1020 in floating point register number 4 with value 27.000000
+instruction 400  with ROB_number - 6 updated in reorder buffer 
+Updating reservation stations with ROB - 6
+Count on CDB for program 1 is 4
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 8 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+1016			fmul		16.0		12.0		-1		-1			12			1		1
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		108		0		195.0		-1		-1			7			1		0
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 12: value 0.000000
+Renaming register number 11: value 16.000000
+Renaming register number 13: value 2.000000
+Renaming register number 6: value 195.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+6		1024	W	0		0	1	0		0		0	0		1
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	I	0		0	0	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 31
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+instruction exceuting has address 404 and ROB 7
+Instruction fsd at address 404 entered Load/Store unit.
+FPmult unit output PC 3f8: fmul, rd=-1, rs=-1, rt=-1, fd=0, fs=0, ft=2, immediate=0, target=0 with ROB number 12
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 3f8 to WriteBack Buffer with ROB no - 12  Output - 192.000000
+commit count - 1, wb count - 1
+reg status rob muber - 12	 Commit instruction ROB number - 6
+Committed instruction 1024 in floating point register number 0 with value 195.000000
+instruction 3f8  with ROB_number - 12 updated in reorder buffer 
+Updating reservation stations with ROB - 12
+Count on CDB for program 1 is 2
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+1028			fsd		108		0		195.0		-1		-1			7			1		1
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 11: value 16.000000
+Renaming register number 13: value 2.000000
+Renaming register number 12: value 192.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+7		1028	I	-1		0	0	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	W	0		0	1	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 32
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+execute---unitoutputs of LSLoad/Store unit output PC 404: fsd, rd=-1, rs=2, rt=-1, fd=-1, fs=-1, ft=0, immediate=0, target=0 with ROB number 7
+Execution Complete ---------------
+Write Back Start ---------------
+Added instruction 404 to WriteBack Buffer with ROB no - 7  Output - 195.000000
+commit count - 0, wb count - 1
+instruction 404  with ROB_number - 7 updated in reorder buffer 
+Updating reservation stations with ROB - 7
+Count on CDB for program 1 is 1
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 7 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+Renaming register number 8: value 0
+Renaming register number 9: value 100
+Renaming register number 10: value -1
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 11: value 16.000000
+Renaming register number 13: value 2.000000
+Renaming register number 12: value 192.000000
+Renaming register number 7: value 195.000000
+-----------------
+Integer Registers Status
+-----------------
+Int_Reg[1] is busy with reorder buffer number 8
+Int_Reg[2] is busy with reorder buffer number 9
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+7		1028	W	-1		108	1	0		1		0	0		1
+8		1032	W	1		0	1	1		0		0	0		1
+9		1036	W	2		0	1	1		0		0	0		1
+10		1040	W	-1		0	1	0		0		1	0		0
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	W	0		0	1	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 33
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 7, wb count - 0
+Committed instruction FSD 404 in memory address 6c 
+reg status rob muber - 8	 Commit instruction ROB number - 8
+Committed instruction 1032 in integer register number 1 with value 0 
+reg status rob muber - 9	 Commit instruction ROB number - 9
+Committed instruction 1036 in integer register number 2 with value 100 
+instruction being flushed has rob num 11
+Branch mispredicted so flushed ROB.
+Committed branch instruction 410
+Count on CDB for program 1 is 4
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 3 fetch end - 1 FBcount - 0
+-----------------
+Instruction Queue
+-----------------
+-----------------
+Reservation Station INT
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPadd
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPmult
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station FPdiv
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Reservation Station BU
+-----------------
+Instruction address|  Op code  |  Vj  |  Vk  |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+------------------------------------------------------------------------------------------------
+-----------------
+Load Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Store Buffer
+-----------------
+Instruction address|  Op code  |  Vj  |  iVk  |  fpVk |  Qj  |  Qk  |Destination ROB#|isReady|isExecuting
+--------------------------------------------------------------------------------------------------------
+-----------------
+Renaming Integer Registers
+-----------------
+-----------------
+Renaming Floating Pointer Registers
+-----------------
+Renaming register number 11: value 16.000000
+Renaming register number 13: value 2.000000
+Renaming register number 12: value 192.000000
+-----------------
+Integer Registers Status
+-----------------
+-----------------
+Floating Point Registers Status
+-----------------
+FP_Reg[0] is busy with reorder buffer number 12
+FP_Reg[4] is busy with reorder buffer number 13
+-----------------
+Reorder Buffer
+-----------------
+ROB_number  |Instr add|State| Dest Reg | DestAddr | isReady  |  isIntegerReg | isStore | isBranch   | isAfterBranch  | isCorrectPredict
+--------------------------------------------------------------------------------------------------------------------------------------
+11		1012	W	0		0	1	0		0		0	0		1
+12		1016	W	0		0	1	0		0		0	0		1
+13		1020	W	4		0	1	0		0		0	0		1
+
+Cycle 34
+All instructions are fetched...
+Finished fetching.
+Finished decoding.
+Finished issue.
+Execution -----------
+Execution Complete ---------------
+Write Back Start ---------------
+commit count - 3, wb count - 0
+reg status rob muber - 12	 Commit instruction ROB number - 11
+Committed instruction 1012 in floating point register number 0 with value 16.000000
+reg status rob muber - 12	 Commit instruction ROB number - 12
+Committed instruction 1016 in floating point register number 0 with value 192.000000
+reg status rob muber - 13	 Commit instruction ROB number - 13
+Committed instruction 1020 in floating point register number 4 with value 2.000000
+Count on CDB for program 1 is 3
+------------------------------------------------------
+Commit finished -----------
+Finished update.
+part 1 - IQ count -0 robcount - 0 fetch end - 1 FBcount - 0
+Processor has finished working in 34 cycle(s).
+Stalls due to full Reservation Stations: 6
+Stalls due to full Reorder Buffer: 6
+Commited instructions Count is 30
+----------
+Data Cache
+----------
+Mem(0) = 16.0
+Mem(8) = 14.0
+Mem(16) = 5.0
+Mem(24) = 10.0
+Mem(100) = 2.0
+Mem(200) = 12.0
+Mem(124) = 128.0
+Mem(116) = 63.0
+Mem(108) = 195.0
+-----------------
+Integer Registers
+-----------------
+Int_Reg[0]=0
+Int_Reg[1]=0
+Int_Reg[2]=100
+Int_Reg[3]=0
+Int_Reg[4]=0
+Int_Reg[5]=0
+Int_Reg[6]=0
+Int_Reg[7]=0
+Int_Reg[8]=0
+Int_Reg[9]=0
+Int_Reg[10]=0
+Int_Reg[11]=0
+Int_Reg[12]=0
+Int_Reg[13]=0
+Int_Reg[14]=0
+Int_Reg[15]=0
+Int_Reg[16]=0
+Int_Reg[17]=0
+Int_Reg[18]=0
+Int_Reg[19]=0
+Int_Reg[20]=0
+Int_Reg[21]=0
+Int_Reg[22]=0
+Int_Reg[23]=0
+Int_Reg[24]=0
+Int_Reg[25]=0
+Int_Reg[26]=0
+Int_Reg[27]=0
+Int_Reg[28]=0
+Int_Reg[29]=0
+Int_Reg[30]=0
+Int_Reg[31]=0
+------------------------
+Floating Point Registers
+------------------------
+FP_Reg[0]=192.0
+FP_Reg[1]=0.0
+FP_Reg[2]=12.0
+FP_Reg[3]=0.0
+FP_Reg[4]=2.0
+FP_Reg[5]=0.0
+FP_Reg[6]=0.0
+FP_Reg[7]=0.0
+FP_Reg[8]=0.0
+FP_Reg[9]=0.0
+FP_Reg[10]=0.0
+FP_Reg[11]=0.0
+FP_Reg[12]=0.0
+FP_Reg[13]=0.0
+FP_Reg[14]=0.0
+FP_Reg[15]=0.0
+FP_Reg[16]=0.0
+FP_Reg[17]=0.0
+FP_Reg[18]=0.0
+FP_Reg[19]=0.0
+FP_Reg[20]=0.0
+FP_Reg[21]=0.0
+FP_Reg[22]=0.0
+FP_Reg[23]=0.0
+FP_Reg[24]=0.0
+FP_Reg[25]=0.0
+FP_Reg[26]=0.0
+FP_Reg[27]=0.0
+FP_Reg[28]=0.0
+FP_Reg[29]=0.0
+FP_Reg[30]=0.0
+FP_Reg[31]=0.0
+Average utilization of CDB is - 44.000000

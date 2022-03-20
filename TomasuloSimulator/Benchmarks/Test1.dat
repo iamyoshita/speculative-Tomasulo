@@ -1,0 +1,21 @@
+addi R1, R0, 24
+addi R2, R0, 124
+fld F2, 200(R0)
+loop: fld F0, 0(R1)
+fmul F0, F0, F2
+fld F4, 0(R2)
+fadd F0, F0, F4
+fsd F0, 0(R2)
+addi R1, R1, -8
+addi R2, R2, -8
+bne R1, $0, loop
+DATA
+Mem(0) = 16
+Mem(8) = 14
+Mem(16) = 5
+Mem(24) = 10
+Mem(100) = 2
+Mem(108) = 27
+Mem(116) = 3
+Mem(124) = 8
+Mem(200) = 12
