@@ -1,0 +1,11 @@
+1,1
+2,2
+0,0
+
+fld F1,1(R0)
+fld F2,2(R0)
+fadd F4,F2,F1
+fsub F5,F4,F1
+fmul F4,F5,F1
+fsd F4,1(R0)
+fld F6,1(R0)

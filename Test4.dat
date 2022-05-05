@@ -1,0 +1,11 @@
+1,1
+2,2
+0,0
+
+addi R1,R0,4
+fld F1,1(R0)
+fld F2,2(R0)
+loop: fadd F6,F6,F1
+addi R1,R1,-1
+bne R0,R1,loop
+fsub F8,F2,F1
